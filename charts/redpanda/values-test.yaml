@@ -1,0 +1,25 @@
+
+nameOverride: "osp-redpanda"
+# -- Override `redpanda.fullname` template.
+fullnameOverride: "osp-redpanda"
+# -- Redpanda Docker image settings.
+image:
+  repository: vectorized/redpanda.
+  tag: "v23.1.8"
+  pullPolicy: IfNotPresent
+console:
+  enabled: falses
+tls:
+  enabled: true
+  certs:
+    default:
+      caEnabled: true
+    external:
+      caEnabled: true
+external:
+  enabled: true
+  type: NodePort
+  # addresses:
+  # - redpanda-0
+  # - redpanda-1
+  # - redpanda-2
